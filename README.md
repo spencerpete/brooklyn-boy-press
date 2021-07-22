@@ -74,9 +74,13 @@ Link to figma: https://www.figma.com/file/9e4eCJsjX3xA3d1NZZHcB4/Untitled?node-i
 ![image](https://user-images.githubusercontent.com/69879139/126584056-c6c32af8-33dd-4109-bba4-dd3ebcdb78d7.png)
 
 
-### Article and Review list
+#### Article and Review list
 ![image](https://user-images.githubusercontent.com/69879139/126584168-8ce31f0c-c587-4d66-9423-c3147d321d7a.png)
 ![image](https://user-images.githubusercontent.com/69879139/126584094-be938bc6-dc7c-4b39-b4e7-d7cadc269611.png)
+
+#### Mobile View 
+![image](https://user-images.githubusercontent.com/69879139/126643734-b7ce5f40-7e44-4021-99d9-965b14ed8dc4.png)
+
 
 
 #### Component Tree
