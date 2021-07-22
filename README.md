@@ -32,7 +32,7 @@ _**brooklyn boy press** a new online magazine for the brooklyn boy, a mostly sat
 
 ### Goals
 
-- Magazine with Articles and Reviews
+- Online Magazine with Articles and Reviews
 - Ability to sign up and subcribe
 - Users are able to comment on articles/reviews and other comments
 - Styled with Tailwind 
@@ -65,12 +65,11 @@ Link to figma: https://www.figma.com/file/9e4eCJsjX3xA3d1NZZHcB4/Untitled?node-i
 
 
 #### Sign in page
-![image](https://user-images.githubusercontent.com/69879139/126583985-2a309141-75a7-42d1-8e1f-ef6d6efacde5.png)
-
+![image](https://user-images.githubusercontent.com/69879139/126647568-5b4ed85e-203c-4795-994f-f496474b2fb9.png)
 
 #### Artcles view 
 ![image](https://user-images.githubusercontent.com/69879139/126584014-51278047-799c-4a66-b426-4b22985745f4.png)
-![image](https://user-images.githubusercontent.com/69879139/126584044-16f39d52-0327-445e-82d7-4158d1640dc4.png)
+![image](https://user-images.githubusercontent.com/69879139/126647834-ce14eaff-a16f-4d1f-87df-12c3f84a4087.png)
 ![image](https://user-images.githubusercontent.com/69879139/126584056-c6c32af8-33dd-4109-bba4-dd3ebcdb78d7.png)
 
 
@@ -80,6 +79,8 @@ Link to figma: https://www.figma.com/file/9e4eCJsjX3xA3d1NZZHcB4/Untitled?node-i
 
 #### Mobile View 
 ![image](https://user-images.githubusercontent.com/69879139/126643734-b7ce5f40-7e44-4021-99d9-965b14ed8dc4.png)
+![image](https://user-images.githubusercontent.com/69879139/126647184-f769bfd3-ea9e-4908-84f4-3b19e967005b.png)
+
 
 
 
@@ -147,7 +148,10 @@ src
 | Set Up Review.jsx   |    H     |     3 hrs      |     TBD       |     TBD     |
 | Set Up Comment.jsx  |    H     |     2 hrs      |     TBD       |     TBD     |
 | Do some styling     |    H     |     3 hrs      |     TBD       |     TBD     |
-| TOTAL               |          |     6 hrs      |     TBD       |     TBD     |
+|Setup ArticleList.jsx|    H     |     1 hr       |     TBD       |     TBD     |
+|Set up ReviewList.jsx|    H     |     1 hr       |     TBD       |     TBD     |
+| major styling       |    H     |     6 hrs      |     TBD       |     TBD     |
+| TOTAL               |          |     41 hrs     |     TBD       |     TBD     |
 
 <br>
 
