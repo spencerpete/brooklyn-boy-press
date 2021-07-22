@@ -159,8 +159,7 @@ src
 
 #### ERD Model
 
-![Untitled Diagram](https://user-images.githubusercontent.com/69879139/126583415-aff8bc94-cf8a-470c-a59c-285f3fe828eb.jpg)
-
+![image](https://user-images.githubusercontent.com/69879139/126700033-e2ebb3c7-b818-4596-bfda-cbaf4fa81f2d.png)
 <br>
 
 ***
