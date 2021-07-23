@@ -8,7 +8,7 @@ export default function Nav(props) {
   return (
     <div>
       {homepage ? '' : <h1>brooklyn boy press</h1>}
-      <Link>Articles</Link>
+      <Link to="/articles">Articles</Link>
       <Link>Reviews</Link>
       {currentUser ? (
         <div>
