@@ -48,7 +48,7 @@ function App() {
             <SignIn handleSignIn={handleSignIn} />
           </Route>
           <Route path="/">
-            <MainContainer />
+            <MainContainer currentUser={currentUser} />
           </Route>
         </Switch>
       </Layout>

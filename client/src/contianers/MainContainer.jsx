@@ -9,7 +9,7 @@ import Homepage from '../screens/Homepage';
 export default function MainContainer(props) {
   const [postList, setPostList] = useState([]);
   const [comments, setComments] = useState([]);
-
+  const { currentUser } = props;
   useEffect(() => {
     const fetchPosts = async () => {
       const postData = await getAllPosts();
@@ -27,7 +27,7 @@ export default function MainContainer(props) {
     <div>
       <Switch>
         <Route path="/articles/:id">
-          <ArticlePage comments={comments} />
+          <ArticlePage comments={comments} currentUser={currentUser} />
         </Route>
         <Route path="/articles">
           <ArticleList postList={postList} />
