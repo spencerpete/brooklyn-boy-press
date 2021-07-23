@@ -1,4 +1,4 @@
-import api from './api_config';
+import api from './api-config';
 
 export const getAllPosts = async () => {
   const resp = await api.get('/posts');
