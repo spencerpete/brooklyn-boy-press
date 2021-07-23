@@ -1,5 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Nav() {
-  return <div>Nav</div>;
+export default function Nav(props) {
+  const { currentUser, handleLogOut } = props;
+  return (
+    <div>
+      {homepage ? '' : <h1>brooklyn boy press</h1>}
+      <Link>Articles</Link>
+      <Link>Reviews</Link>
+      {currentUser ? (
+        <div>
+          <button onClick={handleLogOut}>Logout</button>
+        </div>
+      ) : (
+        <Link to="/sign-up">Sign In / Sign Up</Link>
+      )}
+    </div>
+  );
 }

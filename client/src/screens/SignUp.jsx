@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignUp(props) {
   const [formData, setFormData] = useState({
@@ -23,6 +24,9 @@ export default function SignUp(props) {
         handleSignUp(formData);
       }}
     >
+      <h3>
+        Sign up / <Link to="/sign-in">Sign In</Link>
+      </h3>
       <label>
         Username
         <input name="username" type="text" value={username} onChange={handleChange} />

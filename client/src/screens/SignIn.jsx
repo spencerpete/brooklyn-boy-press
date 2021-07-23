@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SignIn(props) {
   const [formData, setFormData] = useState({
@@ -6,7 +7,7 @@ export default function SignIn(props) {
     password: '',
   });
 
-  const { username, password, email } = formData;
+  const { username, password } = formData;
   const { handleSignIn } = props;
   const handleChange = e => {
     const { name, value } = e.target;
@@ -22,6 +23,9 @@ export default function SignIn(props) {
         handleSignIn(formData);
       }}
     >
+      <h3>
+        <Link to="/sign-up">Sign Up </Link>/ Sign in
+      </h3>
       <label>
         Username
         <input name="username" type="text" value={username} onChange={handleChange} />

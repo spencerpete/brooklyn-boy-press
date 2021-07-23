@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <Layout handleLogOut={handleLogOut}>
+      <Layout handleLogOut={handleLogOut} currentUser={currentUser}>
         <Switch>
           <Route path="/sign-up">
             <SignUp handleSignUp={handleSignUp} />
