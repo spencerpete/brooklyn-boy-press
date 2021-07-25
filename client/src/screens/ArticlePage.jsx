@@ -42,6 +42,14 @@ export default function ArticlePage(props) {
               <div>
                 {comment.content}
                 <div>reply</div>
+                {currentUser?.id === comment?.user.id ? (
+                  <div>
+                    <div>edit</div>
+                    <div>delete</div>
+                  </div>
+                ) : (
+                  ''
+                )}
               </div>
             ))}
           </div>
