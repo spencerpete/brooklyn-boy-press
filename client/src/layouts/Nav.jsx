@@ -7,7 +7,7 @@ export default function Nav(props) {
   const { currentUser, handleLogOut } = props;
 
   const addShadow = () => {
-    if (window.scrollY >= 80) {
+    if (window.scrollY >= 30) {
       setScrolling(true);
     } else {
       setScrolling(false);
@@ -18,13 +18,15 @@ export default function Nav(props) {
   return (
     <nav
       className={`nav flex justify-between ${
-        scrolling ? 'filter drop-shadow' : ''
-      } fixed w-full bg-white mb-8`}
+        scrolling ? 'filter drop-shadow-lg' : ''
+      } fixed w-full bg-white mb-8 text-xl p-4`}
     >
       {window.location.pathname === '/homepage' ? (
         <div></div>
       ) : (
-        <Link to="/homepage">brooklyn boy press</Link>
+        <Link to="/homepage" className="mx-6">
+          brooklyn boy press
+        </Link>
       )}
       <div className="flex justify-between self-end">
         <Link className="mx-6" to="/articles">

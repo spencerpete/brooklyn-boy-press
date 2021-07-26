@@ -25,7 +25,6 @@ export default function CommentInput(props) {
       }}
     >
       <label>
-        Reply
         <input type="text" name="content" value={formData.name} onChange={handleChange} />
       </label>
       <button>reply</button>

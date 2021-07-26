@@ -32,8 +32,8 @@ export default function Comment(props) {
     </div>
   );
   return (
-    <div>
-      <div>{author?.username}</div>
+    <div className="w-11/12 m-auto">
+      <div className="text-left">{author?.username}</div>
       <div>{content}</div>
       <button onClick={toggleReply}>reply</button>
       {clicked && reply}

@@ -35,7 +35,7 @@ export default function MainContainer(props) {
     setComments(prevState => prevState.filter(comment => comment.id !== id));
   };
   return (
-    <div>
+    <div className="flex flex-col align-center">
       <Switch>
         <Route path="/articles/:id">
           <ArticlePage
