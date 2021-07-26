@@ -10,7 +10,7 @@ export default function ArticleList(props) {
         <Link to={`/articles/${article.id}`}>
           <div key={article.id}>
             <div>{article.title}</div>
-            <div>{article.author}</div>
+            <div>by - {article.author}</div>
           </div>
         </Link>
       ))}

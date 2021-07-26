@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 
 export default function CommentInput(props) {
-  const { currentUser, post_id, comment_id } = props;
+  const { currentUser, post_id, comment_id, handleCreate } = props;
   const [formData, setFormData] = useState({
     content: '',
     user_id: currentUser.id,
@@ -18,11 +18,17 @@ export default function CommentInput(props) {
     }));
   };
   return (
-    <form>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        handleCreate(formData);
+      }}
+    >
       <label>
         Reply
         <input type="text" name="content" value={formData.name} onChange={handleChange} />
       </label>
+      <button>reply</button>
     </form>
   );
 }

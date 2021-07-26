@@ -3,8 +3,9 @@ import CommentInput from './CommentInput';
 
 export default function Comment(props) {
   const [clicked, setClicked] = useState(false);
-  const { author, currentUser, content, comment, allComments } = props;
-  const subComments = allComments.filter(subcomment => subcomment.comment_id === comment.id);
+  const { author, currentUser, content, comment, allComments, handleCreateChild, handleDelete } =
+    props;
+  const subComments = allComments?.filter(subcomment => subcomment?.comment_id === comment.id);
   const nestedComment = subComments.map(comment => {
     return (
       <Comment
@@ -13,13 +14,20 @@ export default function Comment(props) {
         currentUser={currentUser}
         author={comment.user}
         allComments={allComments}
+        handleCreateChild={handleCreateChild}
+        handleDelete={handleDelete}
       />
     );
   });
   const toggleReply = () => setClicked(!clicked);
   const reply = (
     <div>
-      <CommentInput currentUser={currentUser} post_id="" comment_id={comment.id} />
+      <CommentInput
+        currentUser={currentUser}
+        post_id=""
+        comment_id={comment.id}
+        handleCreate={handleCreateChild}
+      />
       <button onClick={toggleReply}>cancel</button>
     </div>
   );
@@ -32,7 +40,7 @@ export default function Comment(props) {
       {currentUser && currentUser?.id === author?.id ? (
         <div>
           <p>edit</p>
-          <p>delete</p>
+          <button onClick={() => handleDelete(comment.id)}>delete</button>
         </div>
       ) : (
         ''

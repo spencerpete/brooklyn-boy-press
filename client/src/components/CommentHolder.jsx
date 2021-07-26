@@ -2,7 +2,7 @@ import React from 'react';
 import Comment from './Comment';
 
 export default function CommentHolder(props) {
-  const { comment, currentUser, allComments } = props;
+  const { comment, currentUser, allComments, handleCreateChild, handleDelete } = props;
   return (
     <div>
       <Comment
@@ -11,6 +11,8 @@ export default function CommentHolder(props) {
         content={comment.content}
         comment={comment}
         allComments={allComments}
+        handleCreateChild={handleCreateChild}
+        handleDelete={handleDelete}
       />
     </div>
   );
