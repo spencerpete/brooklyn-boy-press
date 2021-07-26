@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getOnePost } from '../services/post';
+import CommentSection from '../components/CommentSection';
 
 export default function ArticlePage(props) {
   const [post, setPost] = useState(null);
@@ -15,8 +16,7 @@ export default function ArticlePage(props) {
     fetchPost(id);
   }, []);
 
-  const articleComment = comments.filter(comment => comment.post_id === Number(id));
-  console.log(currentUser);
+  const articleComments = comments.filter(comment => comment.post_id === Number(id));
   return (
     <div>
       <h2>{post?.title}</h2>
@@ -24,8 +24,14 @@ export default function ArticlePage(props) {
       <p>{post?.content}</p>
       <h3>comments</h3>
       <div>add a comment?</div>
-      {articleComment.map(comment => (
-        <div>
+      <CommentSection
+        articleComments={articleComments}
+        id={id}
+        currentUser={currentUser}
+        allComments={comments}
+      />
+      {/* {articleComment.map(comment => (
+        <div key={comment.id}>
           <p>{comment?.user.username}</p>
           <p>{comment?.content}</p>
           <div>reply</div>
@@ -38,23 +44,24 @@ export default function ArticlePage(props) {
             ''
           )}
           <div>
-            {comment?.subcomments.map(comment => (
-              <div>
-                {comment.content}
-                <div>reply</div>
-                {currentUser?.id === comment?.user.id ? (
-                  <div>
-                    <div>edit</div>
-                    <div>delete</div>
-                  </div>
-                ) : (
-                  ''
-                )}
-              </div>
-            ))}
+            {comment.subcomments &&
+              comment.subcomments.map(comment => (
+                <div key={comment.id}>
+                  {comment.content}
+                  <div>reply</div>
+                  {currentUser && currentUser.id === comment.user_id ? (
+                    <div>
+                      <div>edit</div>
+                      <div>delete</div>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </div>
+              ))}
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
