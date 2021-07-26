@@ -17,22 +17,32 @@ export default function Nav(props) {
   window.addEventListener('scroll', addShadow);
   return (
     <nav
-      className={`nav flex justify-center ${
+      className={`nav flex justify-between ${
         scrolling ? 'filter drop-shadow' : ''
       } fixed w-full bg-white mb-8`}
     >
-      {window.location.pathname === '/homepage' ? '' : <h1>brooklyn boy press</h1>}
-      <div className="flex justify-between">
-        <Link to="/articles">Articles</Link>
-        <Link>Reviews</Link>
-      </div>
-      {currentUser ? (
-        <div>
-          <button onClick={handleLogOut}>Logout</button>
-        </div>
+      {window.location.pathname === '/homepage' ? (
+        <div></div>
       ) : (
-        <Link to="/sign-up">Sign In / Sign Up</Link>
+        <Link to="/homepage">brooklyn boy press</Link>
       )}
+      <div className="flex justify-between self-end">
+        <Link className="mx-6" to="/articles">
+          Articles
+        </Link>
+        <Link className="mx-6">Reviews</Link>
+        {currentUser ? (
+          <div>
+            <button className="mx-6" onClick={handleLogOut}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <Link className="mx-6" to="/sign-up">
+            Sign In / Sign Up
+          </Link>
+        )}
+      </div>
     </nav>
   );
 }
