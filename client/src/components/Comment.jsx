@@ -34,18 +34,22 @@ export default function Comment(props) {
   return (
     <div className="w-11/12 m-auto">
       <div className="text-left">{author?.username}</div>
-      <div>{content}</div>
-      <button onClick={toggleReply}>reply</button>
-      {clicked && reply}
-      {currentUser && currentUser?.id === author?.id ? (
-        <div>
-          <p>edit</p>
-          <button onClick={() => handleDelete(comment.id)}>delete</button>
+      <div className="mx-2 px-2 border-l">
+        <div className=" text-left">{content}</div>
+        <div className="flex justify-end">
+          <button onClick={toggleReply}>reply</button>
+          {clicked && reply}
+          {currentUser && currentUser?.id === author?.id ? (
+            <div>
+              <p>edit</p>
+              <button onClick={() => handleDelete(comment.id)}>delete</button>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
-      ) : (
-        ''
-      )}
-      {nestedComment}
+        {nestedComment}
+      </div>
     </div>
   );
 }
