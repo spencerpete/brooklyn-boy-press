@@ -12,6 +12,7 @@ import ArticleList from '../screens/ArticleList';
 import ArticlePage from '../screens/ArticlePage';
 import ReviewList from '../screens/ReviewList';
 import Homepage from '../screens/Homepage';
+import ReviewPage from '../screens/ReviewPage';
 
 export default function MainContainer(props) {
   const [postList, setPostList] = useState([]);
@@ -64,6 +65,16 @@ export default function MainContainer(props) {
         </Route>
         <Route path="/articles">
           <ArticleList postList={postList} />
+        </Route>
+        <Route path="/reviews/:id">
+          <ReviewPage
+            comments={comments}
+            currentUser={currentUser}
+            handleCreateChild={handleCreateChild}
+            handleCreateParent={handleCreateParent}
+            handleUpdate={handleUpdate}
+            handleDelete={handleDelete}
+          />
         </Route>
         <Route path="/reviews">
           <ReviewList postList={postList} />
