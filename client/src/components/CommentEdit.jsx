@@ -1,14 +1,14 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function CommentInput(props) {
-  const { currentUser, post_id, comment_id, handleCreate, toggleReply } = props;
+export default function CommentEdit(props) {
+  const { id, comment, toggleEdit, handleUpdate } = props;
   const [formData, setFormData] = useState({
-    content: '',
-    user_id: currentUser.id,
-    post_id: post_id,
-    comment_id: comment_id,
+    content: comment.content,
+    user_id: comment.user_id,
+    post_id: comment.post_id,
+    comment_id: comment.comment_id,
   });
+
   const handleChange = e => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -21,8 +21,8 @@ export default function CommentInput(props) {
       className="w-full flex"
       onSubmit={e => {
         e.preventDefault();
-        handleCreate(formData);
-        toggleReply();
+        handleUpdate(id, formData);
+        toggleEdit();
       }}
     >
       <label>
@@ -34,7 +34,7 @@ export default function CommentInput(props) {
           onChange={handleChange}
         />
       </label>
-      <button className="border py-2 px-4">reply</button>
+      <button className="border py-2 px-4">edit</button>
     </form>
   );
 }

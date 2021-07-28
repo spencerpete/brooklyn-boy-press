@@ -2,7 +2,15 @@ import React from 'react';
 import CommentHolder from './CommentHolder';
 
 export default function CommentSection(props) {
-  const { currentUser, allComments, articleComments, handleCreateChild, handleDelete } = props;
+  const {
+    currentUser,
+    allComments,
+    articleComments,
+    handleCreateChild,
+    handleDelete,
+    handleUpdate,
+    toggleReply,
+  } = props;
 
   return (
     <div>
@@ -13,6 +21,8 @@ export default function CommentSection(props) {
           currentUser={currentUser}
           handleCreateChild={handleCreateChild}
           handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
+          toggleReply={toggleReply}
         />
       ))}
     </div>

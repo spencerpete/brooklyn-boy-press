@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
     @comment.user = User.find(comment_params[:user_id])
     @comment.post = Post.find(comment_params[:post_id])
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment,include: :user, status: :created, location: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ def create_subcomment
     @comment.user = User.find(comment_params[:user_id])
     @comment.comment = Comment.find(comment_params[:comment_id])
     if @comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: @comment, include: :user, status: :created, location: @comment
     else
       render json: @comment.errors, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ end
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      render json: @comment
+      render json: @comment, include: :user, status: :ok
     else
       render json: @comment.errors, status: :unprocessable_entity
     end

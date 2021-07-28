@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { getAllPosts } from '../services/post';
-import { deleteComment, getAllComments, postComment, postSubcomment } from '../services/comment';
+import {
+  deleteComment,
+  getAllComments,
+  postComment,
+  postSubcomment,
+  putComment,
+} from '../services/comment';
 import ArticleList from '../screens/ArticleList';
 import ArticlePage from '../screens/ArticlePage';
+import ReviewList from '../screens/ReviewList';
 import Homepage from '../screens/Homepage';
 
 export default function MainContainer(props) {
@@ -30,6 +37,14 @@ export default function MainContainer(props) {
     const commentData = await postSubcomment(formData);
     setComments(prevState => [...prevState, commentData]);
   };
+  const handleUpdate = async (id, formData) => {
+    const commentData = await putComment(id, formData);
+    setComments(prevState =>
+      prevState.map(comment => {
+        return comment.id === id ? commentData : comment;
+      })
+    );
+  };
   const handleDelete = async id => {
     await deleteComment(id);
     setComments(prevState => prevState.filter(comment => comment.id !== id));
@@ -43,14 +58,18 @@ export default function MainContainer(props) {
             currentUser={currentUser}
             handleCreateChild={handleCreateChild}
             handleCreateParent={handleCreateParent}
+            handleUpdate={handleUpdate}
             handleDelete={handleDelete}
           />
         </Route>
         <Route path="/articles">
           <ArticleList postList={postList} />
         </Route>
-        <Route path="/homepage">
-          <Homepage />
+        <Route path="/reviews">
+          <ReviewList postList={postList} />
+        </Route>
+        <Route path="/">
+          <Homepage posts={postList} />
         </Route>
       </Switch>
     </div>

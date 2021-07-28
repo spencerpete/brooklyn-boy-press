@@ -18,7 +18,7 @@ export default function SignUp(props) {
     }));
   };
   return (
-    <div className="mt-8 w-4/12 m-auto">
+    <div className="md:mt-8  mt-16 md:w-5/12 w-11/12  mx-auto">
       <form
         className="flex flex-col my-10 shadow bg-gray-200"
         onSubmit={e => {
@@ -26,13 +26,13 @@ export default function SignUp(props) {
           handleSignUp(formData);
         }}
       >
-        <h3 className="my-8 text-xl">
+        <h3 className="my-8 md:text-xl sm:text-lg">
           Sign up /{' '}
           <Link className="opacity-50" to="/sign-in">
             Sign In
           </Link>
         </h3>
-        <label className="opacity-50 border-b border-gray-500 w-7/12 m-auto pb-2 text-left my-8">
+        <label className="opacity-50 border-b border-gray-500 w-7/12 m-auto pb-2 text-left sm:text-s my-8">
           Username
           <input
             className="ml-2 bg-gray-200 focus:outline-none"

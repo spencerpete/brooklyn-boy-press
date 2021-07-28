@@ -1,0 +1,23 @@
+/* .navbar-container {
+  @apply  bg-white h-12 pb-14 md:pb-20 md:h-20
+} */
+
+.navbar {
+  @apply bg-white fixed top-0 left-0 right-0 flex  justify-between z-40 ;
+}
+.navbar-nav {
+  @apply flex;
+}
+
+.navbar-dropdown {
+  @apply md:hidden ml-2 mb-0 text-5xl
+}
+
+.nav-link {
+  @apply  md:text-xl py-4
+}
+
+.navbar-auth {
+  @apply flex 
+}
+

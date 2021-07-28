@@ -1,0 +1,31 @@
+.sidenav-container {
+  @apply bg-black bg-opacity-50 fixed w-full h-screen z-50 transform -translate-x-full transition duration-300 flex justify-center items-center
+}
+
+.sidenav {
+  @apply flex flex-col w-3/5 h-5/6 m-auto fixed m-auto bg-white transform -translate-x-full transition duration-300 justify-evenly
+}
+
+.sidenav-header {
+  @apply flex 
+}
+
+.sidenav-brand {
+  @apply text-2xl font-semibold
+}
+
+.close {
+  @apply absolute right-3 top-3 text-xl
+}
+
+.sidenav-links {
+  @apply flex h-full flex-col justify-evenly
+}
+
+.sidenav-link {
+  @apply text-lg
+}
+
+.show {
+  @apply transform translate-x-0
+}

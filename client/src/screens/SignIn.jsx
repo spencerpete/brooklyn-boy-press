@@ -17,7 +17,7 @@ export default function SignIn(props) {
     }));
   };
   return (
-    <div className="mt-8 w-4/12 m-auto">
+    <div className="md:mt-8  mt-16 md:w-5/12 w-11/12  mx-auto">
       <form
         className="flex flex-col my-10 shadow bg-gray-200"
         onSubmit={e => {
