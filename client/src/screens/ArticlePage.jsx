@@ -51,8 +51,8 @@ export default function ArticlePage(props) {
   window.addEventListener('scroll', addShadow);
   return (
     <div
-      className={`w-11/12 md:w-10/12 flex flex-col align-center m-auto ${
-        scrolling ? 'border' : ''
+      className={`w-11/12 md:w-10/12 flex flex-col align-center mx-auto my-20 ${
+        scrolling ? 'border-l border-r' : ''
       }`}
     >
       <img src={post?.main_img_url} alt={post?.title} />
