@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Redirect, useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getOnePost } from '../services/post';
 import CommentSection from '../components/CommentSection';
 import CommentInput from '../components/CommentInput';
@@ -7,6 +7,7 @@ import CommentInput from '../components/CommentInput';
 export default function ArticlePage(props) {
   const [post, setPost] = useState(null);
   const [clicked, setClicked] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const { id } = useParams();
   const {
     comments,
@@ -39,12 +40,25 @@ export default function ArticlePage(props) {
       <button onClick={toggleReply}>cancel</button>
     </div>
   );
+  const addShadow = () => {
+    if (window.scrollY >= 30) {
+      setScrolling(true);
+    } else {
+      setScrolling(false);
+    }
+  };
+
+  window.addEventListener('scroll', addShadow);
   return (
-    <div className="w-11/12 md:w-10/12 flex flex-col align-center m-auto">
+    <div
+      className={`w-11/12 md:w-10/12 flex flex-col align-center m-auto ${
+        scrolling ? 'border' : ''
+      }`}
+    >
       <img src={post?.main_img_url} alt={post?.title} />
-      <h2 className="text-xl my-8">{post?.title}</h2>
+      <h2 className="text-xl  md:text-2xl my-8">{post?.title}</h2>
       <p className="w-10/12 md:w-8/12 self-center text-left leading-loose">{post?.content}</p>
-      <h4>by - {post?.author}</h4>
+      <h4 className="text-xl opacity-50">by - {post?.author}</h4>
       <div className="flex justify-between m-auto w-full md:w-7/12">
         <h3 className="text-2xl">comments</h3>
         {currentUser ? (

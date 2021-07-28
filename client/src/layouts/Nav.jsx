@@ -41,9 +41,9 @@ export default function Nav(props) {
                   Logout
                 </button>
               ) : (
-                <Link className="mx-6 nav-link" to="/sign-up">
-                  Sign In / Sign Up
-                </Link>
+                <button className="mx-6 nav-link">
+                  <Link to="/sign-up">Sign In / Sign Up</Link>
+                </button>
               )}
             </div>
           </div>
@@ -53,37 +53,5 @@ export default function Nav(props) {
         </div>
       </div>
     </div>
-    //   <nav
-    //     className={`nav flex justify-between ${
-    //       scrolling ? 'filter drop-shadow-lg' : ''
-    //     } fixed w-full bg-white mb-8 text-xl p-4`}
-    //   >
-    //     {window.location.pathname === '/homepage' ? (
-    //       <div></div>
-    //     ) : (
-    //       <Link to="/homepage" className="mx-6">
-    //         brooklyn boy press
-    //       </Link>
-    //     )}
-    //     <div className="flex justify-between self-end">
-    //       <Link className="mx-6" to="/articles">
-    //         Articles
-    //       </Link>
-    //       <Link className="mx-6" to="/reviews">
-    //         Reviews
-    //       </Link>
-    //       {currentUser ? (
-    //         <div>
-    //           <button className="mx-6" onClick={handleLogOut}>
-    //             Logout
-    //           </button>
-    //         </div>
-    //       ) : (
-    //         <Link className="mx-6" to="/sign-up">
-    //           Sign In / Sign Up
-    //         </Link>
-    //       )}
-    //     </div>
-    //   </nav>
   );
 }

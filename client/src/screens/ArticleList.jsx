@@ -10,14 +10,14 @@ export default function ArticleList(props) {
       {articles.map(article => (
         <Link
           key={article.id}
-          className="md:w-6/12 sm:w-11/12 flex m-auto shadow-lg my-6"
+          className="md:w-7/12 w-11/12 flex m-auto shadow-lg my-6"
           to={`/articles/${article.id}`}
         >
           <div className="lg:w-2/12  md:w-3/12 w-4/12 p-4">
             <img className="max-w-full h-auto" src={article.thumbnail_url} alt={article.title} />
           </div>
           <div className="p-4">
-            <div>{article.title}</div>
+            <div className="text-left">{article.title}</div>
             <div className="opacity-50 my-2 text-left">by - {article.author}</div>
           </div>
         </Link>

@@ -21,7 +21,7 @@ It doesn\'t matter what the act is… it could be an anti-smetic rant, thinking 
 
 @fourth_post = Post.create!(title:'Are We the Baddies? One brooklyn boy\'s take on Promising young woman',author:'Matt LaDouche', content:'', main_img_url:'https://static.onecms.io/wp-content/uploads/sites/6/2020/12/15/Promising-Young-Woman_2.jpg', thumbnail_url:'https://wehco.media.clients.ellingtoncms.com/img/photos/2020/12/24/resized_150246-promising-young-woman-1225-rgb_rgb_79-31792.jpg', post_type:'review')
 
-@fifth_post = Post.create!(title:'Reviewing the Criterion movies I own but haven\'t watched.',author:'Mark Jason', content:'', main_img_url:'https://d3n8a8pro7vhmx.cloudfront.net/nalip/pages/14931/attachments/original/1535568485/criterion.jpg?1535568485', thumbnail_url:'https://www.indiewire.com/wp-content/uploads/2015/11/criterion-covers.jpg?resize=800,758', post_type:'review')
+@fifth_post = Post.create!(title:'Reviewing the Criterion movies I own but haven\'t watched.',author:'Mark Jason', content:'Review comming soon...', main_img_url:'https://d3n8a8pro7vhmx.cloudfront.net/nalip/pages/14931/attachments/original/1535568485/criterion.jpg?1535568485', thumbnail_url:'https://www.indiewire.com/wp-content/uploads/2015/11/criterion-covers.jpg?resize=800,758', post_type:'review')
 
 @sixth_post = Post.create!(title:'Listening to Sour when you are the Joshua Basset in the relationship',author:'Tyler Garrison' ,content:'', main_img_url:'https://cdn.justjaredjr.com/wp-content/uploads/headlines/2021/01/joshua-bassett-debuts-new-song-lie-lie-lie-watch-music-video.jpg', thumbnail_url:'https://assets.teenvogue.com/photos/6076dcb99774944e1309a4d1/4:3/w_1500,h_1125,c_limit/olivia.jpeg', post_type:'review')
 
@@ -31,10 +31,14 @@ puts "created #{Post.count} post(s)"
 
 @tommybahama = User.create!(username:'TommyBahama', email:'tommy@gmail.com', password:'654321')
 
+@badTake = User.create!(username:'BadTake', email:'badtake@gmail.com', password:'1234567')
+
 puts "created #{User.count} user(s)"
 
-@first_comment = Comment.create!(content:'Hey this is a parent comment', user: @tommyboy, post: @first_post)
+@first_comment = Comment.create!(content:'This guy stuff is way to expensive! a real brooklyn boy would thrift', user: @tommyboy, post: @first_post)
 
-@second_comment = Comment.create!(content: 'Hey this is a child comment', user: @tommybahama, comment: @first_comment)
+@second_comment = Comment.create!(content: 'dude you live in queens', user: @tommybahama, comment: @first_comment)
+
+@thir_comment = Comment.create!(content:'Here comes cancel culture to take over brooklyn, they made great are and you are just jealous', user:@badTake, post: @third_post)
 
 puts "created #{Comment.count} comment(s)"

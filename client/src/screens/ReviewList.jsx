@@ -12,11 +12,15 @@ export default function ReviewList(props) {
           className="md:w-6/12 sm:w-11/12 flex m-auto shadow-lg my-6"
           to={`/reviews/${review.id}`}
         >
-          <div className="lg:w-2/12  md:w-3/12 w-4/12 p-4">
-            <img className="max-w-full h-auto" src={review.thumbnail_url} alt={review.title} />
+          <div className="lg:w-2/12  md:w-3/12 flex-col items-center py-6">
+            <img
+              className="max-w-full h-auto m-auto"
+              src={review.thumbnail_url}
+              alt={review.title}
+            />
           </div>
           <div className="p-4">
-            <div>{review.title}</div>
+            <div className="text-left">{review.title}</div>
             <div className="opacity-50 my-2 text-left">by - {review.author}</div>
           </div>
         </Link>
